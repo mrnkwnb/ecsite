@@ -24,8 +24,7 @@ let login = (event) => {
 		}
 	);
 };
-		
-//カートに入れるを押した際に実行される処理
+
 let addCart = (event) => {
 	let tdList = $(event.target).parent().parent().find('td');
 
@@ -38,7 +37,7 @@ let addCart = (event) => {
 		alert('注文数が0または空欄です。');
 		return;
 	}
-			
+
 	let cart = {
 		'id': id,
 		'goodsName': goodsName,
@@ -69,16 +68,12 @@ let addCart = (event) => {
 		$(tr).appendTo(tbody);
 	});
 	$('.removeBtn').on('click', removeCart);
-	
 };
-
-//購入を押した際に実行される処理
 let buy = () => {
 	if(cartList.length <= 0) {
 		alert('カートが空です。');
 		return;
 	};
-	
 	$.ajax({
 		type: 'POST',
 		url: '/ecsite/api/purchase',
@@ -122,14 +117,13 @@ let showHistory = () => {
 			
 			$(tr).appendTo(tbody);
 		});
+		
 		$('#history').dialog('open');
-	}, () => {
+		}, () => {
 		console.error('Error: ajax connection failed.');
 		}
 	);
 };
-
-//▼削除ボタンを押した際に実行される処理	
 let removeCart = (event) => {
 	const tdList = $(event.target).parent().parent().find('td');
 	

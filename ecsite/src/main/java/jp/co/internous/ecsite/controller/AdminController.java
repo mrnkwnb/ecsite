@@ -18,7 +18,7 @@ import jp.co.internous.ecsite.model.form.GoodsForm;
 import jp.co.internous.ecsite.model.form.LoginForm;
 
 @Controller
-@RequestMapping("/ecsite/admin/")
+@RequestMapping("/ecsite/admin")
 public class AdminController {
 
 	@Autowired

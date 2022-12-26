@@ -14,5 +14,4 @@ public class HistoryForm implements Serializable {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
 }
